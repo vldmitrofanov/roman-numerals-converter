@@ -1,0 +1,132 @@
+$bg:#364965;
+$light: lightblue;
+$dark: black;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: $bg;
+}
+
+#app {
+    min-height: 100vh;
+    position: relative;
+    display: inline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+h1 {
+    color: $light;
+    font-weight: 300;
+    font-size: .9rem;
+    text-align: center;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+h4 {
+    color: $light;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+main {
+    position: relative;
+    margin: 3% auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        &>span {
+            font-size: 1.2rem;
+            color: white;
+            line-height: 1.4rem;
+            &.error {
+                color: red;
+            }
+        }
+        .placeholder {
+            display: block;
+            height: 1.4rem;
+        }
+        p {
+            color: $light;
+            font-size: .8rem;
+            font-weight: 300;
+        }
+    }
+}
+
+input[type=text],
+input[type=number] {
+    border: $dark 1px solid;
+    border-radius: 5px;
+    padding: 10px 8px;
+    line-height: 1;
+    font-size: 16px;
+    background-color: lighten($bg, 20%);
+}
+
+button {
+    padding: 8px 2rem;
+    color: $light;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    background-color: darken($bg, 20%);
+    border: darken($bg, 40%) solid 1px;
+    cursor: pointer;
+    transition: all .4s;
+    &:hover {
+        background-color: #f44336;
+        color: white;
+        border: #f44336 solid 1px;
+    }
+}
+
+$green: #77ff77;
+.test-results {
+    padding: 0 4vw;
+    margin-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    li {
+        list-style: none;
+        color: #444;
+        font-size: 14px;
+        div {
+            display: flex;
+            gap: 5px;
+            border-radius: 4px;
+            padding: 4px;
+            &.success {
+                border: 1px solid green;
+                background: lighten($green, 10%);
+            }
+        }
+    }
+}
